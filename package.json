@@ -1,0 +1,11 @@
+{
+  "name": "emRede",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/NateWr/defaultChild.git",
+  "author": "Evaldo Klock <neto.nemesis@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  }
+}
