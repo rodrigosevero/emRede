@@ -26,26 +26,35 @@
 </div><!-- pkp_structure_content -->
 
 <div id="pkp_content_footer" class="pkp_structure_footer_wrapper" role="contentinfo">
+<footer>
+        <div class="footer-text">
+            <p>EmRede - Revista de Educação a Distância, Porto Alegre, RS, Brasil</p>
+            <p> ISSN: 2359-6082 </p>
+             <div class="footer-text">
+                <p>Licença Creative Commons - Atribuição-Não Comercial-Sem Derivações 4.0 Internacional.</p>
+                <img src="{$baseUrl}/templates/images/88x31.png">
+            </div>
+        </div>
+       <a href="https://aunirede.org.br">
+        <img alt="{translate key="about.aboutThisPublishingSystem"}" src="{$baseUrl}/templates/images/ojs_unirede_preto.svg">
+        </a>
+        
+    </footer>
 
-	<div class="pkp_structure_footer">
-
-		{if $pageFooter}
-			<div class="pkp_footer_content">
-				{$pageFooter}
-			</div>
-		{/if}
-
-		<div class="pkp_brand_footer" role="complementary">
-			<a href="{url page="about" op="aboutThisPublishingSystem"}">
-				<img alt="{translate key="about.aboutThisPublishingSystem"}" src="{$baseUrl}/{$brandImage}">
-			</a>
-		</div>
-	</div>
 </div><!-- pkp_structure_footer_wrapper -->
 
 </div><!-- pkp_structure_page -->
 
 {load_script context="frontend"}
+<script type="text/javascript">
+let mainNav = document.getElementById("navigationPrimary");
+let navBarToggle = document.getElementById("navbar-toggle");
+
+navBarToggle.addEventListener("click", function() {
+    mainNav.classList.toggle("active");
+});
+
+</script>
 
 {call_hook name="Templates::Common::Footer::PageFooter"}
 </body>

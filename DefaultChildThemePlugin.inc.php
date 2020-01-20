@@ -22,6 +22,7 @@ class DefaultChildThemePlugin extends ThemePlugin {
 	 * @return null
 	 */
 	public function init() {
+        HookRegistry::register ('TemplateManager::display', array($this, 'loadTemplateData'));
 		$this->setParent('defaultthemeplugin');
 		 $this->addStyle('child-stylesheet', 'styles/emRede.less');
 	}
@@ -40,7 +41,20 @@ class DefaultChildThemePlugin extends ThemePlugin {
 	 */
 	function getDescription() {
 		return __('plugins.themes.default-child.description');
-	}
-}
+    }
+    
+    public function loadTemplateData($hookName, $args) {
+        $templateMgr = $args[0];
+		
+			
+                $uniredeLogo=$this->getPluginPath().'/templates/images/88x31.png';
+			
 
+			$templateMgr->assign('myCustomData', $uniredeLogo);
+		
+       
+       
+	}
+
+}
 ?>
