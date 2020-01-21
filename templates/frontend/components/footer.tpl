@@ -32,11 +32,11 @@
             <p> ISSN: 2359-6082 </p>
              <div class="footer-text">
                 <p>Licença Creative Commons - Atribuição-Não Comercial-Sem Derivações 4.0 Internacional.</p>
-                <img src="{$baseUrl}/templates/images/88x31.png">
+                <img src="{$baseUrl}/{$creativeCommonsLogoUrl}">
             </div>
         </div>
        <a href="https://aunirede.org.br">
-        <img alt="{translate key="about.aboutThisPublishingSystem"}" src="{$baseUrl}/templates/images/ojs_unirede_preto.svg">
+        <img alt="{translate key="about.aboutThisPublishingSystem"}" src="{$baseUrl}/{$uniredeLogoUrl}">
         </a>
         
     </footer>

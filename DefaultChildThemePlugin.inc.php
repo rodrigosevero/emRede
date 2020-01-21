@@ -13,6 +13,8 @@
  * @brief Default theme
  */
 import('lib.pkp.classes.plugins.ThemePlugin');
+define('UNIREDE_LOGO_URL', 'images/logo_unirede.png');
+define('CREATIVE_COMMONS_LOGO_URL', 'images/cc_logo.png');
 
 class DefaultChildThemePlugin extends ThemePlugin {
 	/**
@@ -22,9 +24,11 @@ class DefaultChildThemePlugin extends ThemePlugin {
 	 * @return null
 	 */
 	public function init() {
-        HookRegistry::register ('TemplateManager::display', array($this, 'loadTemplateData'));
+
+        HookRegistry::register('TemplateManager::display', array($this, 'loadAdditionalData'));
 		$this->setParent('defaultthemeplugin');
-		 $this->addStyle('child-stylesheet', 'styles/emRede.less');
+        $this->addStyle('child-stylesheet', 'styles/emRede.less');
+        $this->addStyle('editorial-stylesheet', 'styles/emRedeEditorial.less', array( 'contexts' => 'backend' ));
 	}
 
 	/**
@@ -42,19 +46,34 @@ class DefaultChildThemePlugin extends ThemePlugin {
 	function getDescription() {
 		return __('plugins.themes.default-child.description');
     }
-    
-    public function loadTemplateData($hookName, $args) {
-        $templateMgr = $args[0];
-		
-			
-                $uniredeLogo=$this->getPluginPath().'/templates/images/88x31.png';
-			
 
-			$templateMgr->assign('myCustomData', $uniredeLogo);
-		
-       
-       
+    public function loadAdditionalData($hookName, $args) {
+		$smarty = $args[0];
+
+		$request = Application::getRequest();
+		$context = $request->getContext();
+
+		if (!defined('SESSION_DISABLE_INIT')) {
+
+			// Get possible locales
+			if ($context) {
+				$locales = $context->getSupportedLocaleNames();
+			} else {
+				$locales = $request->getSite()->getSupportedLocaleNames();
+			}
+
+			$uniredeLogoUrl = "/". $this->getPluginPath() . '/' . UNIREDE_LOGO_URL;
+			$creativeCommonsLogoUrl = "/". $this->getPluginPath() . '/' . CREATIVE_COMMONS_LOGO_URL;
+
+			$smarty->assign(array(
+				'languageToggleLocales' => $locales,
+				'uniredeLogoUrl' =>  $uniredeLogoUrl,
+				'creativeCommonsLogoUrl' =>  $creativeCommonsLogoUrl,
+			));
+		}
 	}
+
+
 
 }
 ?>
