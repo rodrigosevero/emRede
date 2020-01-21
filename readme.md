@@ -9,7 +9,20 @@ More info https://aunirede.org.br
 -   Clone this repository on `ojs/plugins/themes` folder
 -   Login into the OJS admin dashboard, activate the plugin and enable the theme.
 
-## About
+# Screenshots
+
+## Destkop
+
+![Alt text](/screenshots/desktop-1.png 'Optional Title')
+
+![Alt text](/screenshots/desktop-2.png 'Optional Title')
+
+## Mobile
+
+![Alt text](/screenshots/mobile-1.png 'Optional Title')
+![Alt text](/screenshots/mobile-2.png 'Optional Title')
+
+# About
 
 Designed by Tatiane Hirata - https://github.com/hiratafs
 
