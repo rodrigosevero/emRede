@@ -53,7 +53,7 @@
                     </a>		
                 {elseif $displayPageHeaderTitle && !$displayPageHeaderLogo && is_string($displayPageHeaderTitle)}
                     <a class="brand" href="{$homeUrl}">
-                         $displayPageHeaderTitle}
+                         {$displayPageHeaderTitle}
                     </a>		
 				{elseif $displayPageHeaderTitle && !$displayPageHeaderLogo && is_array($displayPageHeaderTitle)}
 					<a class="brand" href="{$homeUrl}" class="is_img">
