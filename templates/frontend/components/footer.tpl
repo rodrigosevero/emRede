@@ -27,6 +27,9 @@
 
 <div id="pkp_content_footer" class="pkp_structure_footer_wrapper" role="contentinfo">
 <footer>
+
+        <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=pM4QkoGLUSXy-R9TMYOng7Xh8j9yf5J9sYtYLsQu9sg&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
+
         <div class="footer-text">
             <p>EmRede - Revista de Educação a Distância, Porto Alegre, RS, Brasil</p>
             <p> ISSN: 2359-6082 </p>
